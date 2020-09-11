@@ -2,6 +2,7 @@
   "name": "react-github-repos",
   "version": "0.0.1",
   "main": "./dist/index.js",
+  "typings": "dist/index.d.ts",
   "repository": "https://github.com/mugi111/react-github-repos.git",
   "author": "mugi111",
   "license": "MIT",
