@@ -6,7 +6,7 @@ const Language: React.FC<LangProps> = (props: LangProps) => {
   useEffect(() => {
     const fetchData = async () => {
       const octokit = new Octokit();
-      const result = await octokit.repos.get({
+      const result = await octokit.repos.getContent({
         owner: "github",
         repo: "linguist",
         path: "lib/linguist/languages.yml",
