@@ -1,4 +1,7 @@
+import React from "react";
 import { Octokit } from "@octokit/rest";
+import { ReposName } from "./Components/";
+import { ReposProps } from "./Types";
 
 const getReposData = () => {
   let repoName;
@@ -20,6 +23,15 @@ const getReposData = () => {
       star = data.stargazers_count;
       forked = data.forks_count;
     });
-
-  console.log(repoName, description, language, star, forked);
 };
+
+const GithubRepos: React.FC<ReposProps> = (props: ReposProps) => {
+  return (
+    <div>
+      <div>
+        <ReposName></ReposName>
+      </div>
+    </div>
+  );
+};
+export default GithubRepos;

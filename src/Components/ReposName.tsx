@@ -1,11 +1,7 @@
 import * as React from "react";
+import { ReposNameProps } from "../Types";
 
-interface Props {
-  name: string;
-  url: string;
-}
-
-const ReposName = (props: Props) => {
+const ReposName: React.FC<ReposNameProps> = (props: ReposNameProps) => {
   return (
     <div>
       <a href={props.url}>
