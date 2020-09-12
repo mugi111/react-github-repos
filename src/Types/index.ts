@@ -8,6 +8,11 @@ export type ReposNameProps = {
   url: string;
 };
 
+export type DescProps = {
+  body: string;
+};
+
 export type Root = {
   reposName: ReposNameProps;
+  description: DescProps;
 };
