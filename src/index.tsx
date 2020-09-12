@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Octokit } from "@octokit/rest";
-import { ReposName } from "./Components/";
+import { ReposName, Description } from "./Components";
 import { ReposProps, Root } from "./Types";
 
 const GithubRepos: React.FC<ReposProps> = (props: ReposProps) => {
   const [data, setData] = useState<Root>({
     reposName: { name: "octokit", url: "rest.js" },
+    description: { body: "example" },
   });
 
   useEffect(() => {
@@ -16,7 +17,10 @@ const GithubRepos: React.FC<ReposProps> = (props: ReposProps) => {
         repo: props.repo,
       });
 
-      setData({ reposName: { name: result.data.name, url: result.data.url } });
+      setData({
+        reposName: { name: result.data.name, url: result.data.url },
+        description: { body: result.data.description },
+      });
     };
     fetchData();
   }, []);
@@ -28,6 +32,7 @@ const GithubRepos: React.FC<ReposProps> = (props: ReposProps) => {
           name={data.reposName.name}
           url={data.reposName.url}
         ></ReposName>
+        <Description body={data.description.body}></Description>
       </div>
     </div>
   );
