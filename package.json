@@ -31,7 +31,7 @@
     "prepublishOnly": "yarn transpile",
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
-    "deploy": "gh-pages -d examples/dist",
-    "publish-demo": "npm run build && npm run deploy"
+    "deploy": "gh-pages -d example/dist",
+    "gh-pages": "npm run build && npm run deploy"
   }
 }
