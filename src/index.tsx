@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Octokit } from "@octokit/rest";
-import { ReposName, Description, Language } from "./Components";
+import { ReposName, Description, Language, Star } from "./Components";
 import { ReposProps, Root } from "./Types";
 
 const GithubRepos: React.FC<ReposProps> = (props: ReposProps) => {
@@ -8,6 +8,7 @@ const GithubRepos: React.FC<ReposProps> = (props: ReposProps) => {
     reposName: { name: "octokit", url: "rest.js" },
     description: { body: "example" },
     language: { name: "typescript" },
+    stargazer: { count: 200, url: "example" },
   });
 
   useEffect(() => {
@@ -22,6 +23,10 @@ const GithubRepos: React.FC<ReposProps> = (props: ReposProps) => {
         reposName: { name: result.data.name, url: result.data.url },
         description: { body: result.data.description },
         language: { name: result.data.language },
+        stargazer: {
+          count: result.data.stargazers_count,
+          url: result.data.stargazers_url,
+        },
       });
     };
     fetchData();
@@ -36,6 +41,7 @@ const GithubRepos: React.FC<ReposProps> = (props: ReposProps) => {
         ></ReposName>
         <Description body={data.description.body}></Description>
         <Language name={data.language.name}></Language>
+        <Star count={data.stargazer.count} url={data.stargazer.url}></Star>
       </div>
     </div>
   );
