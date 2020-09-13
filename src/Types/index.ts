@@ -12,7 +12,12 @@ export type DescProps = {
   body: string;
 };
 
+export type LangProps = {
+  name: string;
+};
+
 export type Root = {
   reposName: ReposNameProps;
   description: DescProps;
+  language: LangProps;
 };
