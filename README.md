@@ -1,2 +1,0 @@
-# react-github-repos
-## WIP
