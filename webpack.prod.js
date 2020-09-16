@@ -3,13 +3,12 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const htmlWebpackPlugin = new HtmlWebpackPlugin({
   template: path.join(__dirname, "example/src/index.html"),
   filename: "./index.html",
+  reject: true,
 });
+
 module.exports = {
-  entry: path.join(__dirname, "example/src/index.js"),
-  output: {
-    path: path.join(__dirname, "example/dist"),
-    filename: "bundle.js",
-  },
+  mode: "production",
+  entry: "./dist/index.js",
   module: {
     rules: [
       {
@@ -22,6 +21,10 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
     ],
+  },
+  output: {
+    path: path.join(__dirname, "example/dist"),
+    filename: "bundle.js",
   },
   plugins: [htmlWebpackPlugin],
   resolve: {

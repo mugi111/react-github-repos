@@ -4,12 +4,7 @@ import { ReposName, Description, Language, Star } from "./Components";
 import { ReposProps, Root } from "./Types";
 
 const GithubRepos: React.FC<ReposProps> = (props: ReposProps) => {
-  const [data, setData] = useState<Root>({
-    reposName: { name: "octokit", url: "rest.js" },
-    description: { body: "example" },
-    language: { name: "typescript" },
-    stargazer: { count: 200, url: "example" },
-  });
+  const [data, setData] = useState<Root>({});
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,7 +15,7 @@ const GithubRepos: React.FC<ReposProps> = (props: ReposProps) => {
       });
 
       setData({
-        reposName: { name: result.data.name, url: result.data.url },
+        reposName: { name: result.data.name, url: result.data.html_url },
         description: { body: result.data.description },
         language: { name: result.data.language },
         stargazer: {
@@ -36,12 +31,12 @@ const GithubRepos: React.FC<ReposProps> = (props: ReposProps) => {
     <div>
       <div>
         <ReposName
-          name={data.reposName.name}
-          url={data.reposName.url}
+          name={data.reposName!.name}
+          url={data.reposName!.url}
         ></ReposName>
-        <Description body={data.description.body}></Description>
-        <Language name={data.language.name}></Language>
-        <Star count={data.stargazer.count} url={data.stargazer.url}></Star>
+        <Description body={data.description!.body}></Description>
+        <Language name={data.language!.name}></Language>
+        <Star count={data.stargazer!.count} url={data.stargazer!.url}></Star>
       </div>
     </div>
   );

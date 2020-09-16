@@ -4,26 +4,26 @@ export type ReposProps = {
 };
 
 export type ReposNameProps = {
-  name: string;
-  url: string;
+  name?: string;
+  url?: string;
 };
 
 export type DescProps = {
-  body: string;
+  body?: string;
 };
 
 export type LangProps = {
-  name: string;
+  name?: string;
 };
 
 export type StarProps = {
-  count: number;
-  url: string;
+  count?: number;
+  url?: string;
 };
 
 export type Root = {
-  reposName: ReposNameProps;
-  description: DescProps;
-  language: LangProps;
-  stargazer: StarProps;
+  reposName?: ReposNameProps;
+  description?: DescProps;
+  language?: LangProps;
+  stargazer?: StarProps;
 };
