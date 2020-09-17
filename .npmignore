@@ -2,3 +2,7 @@ src/
 test/
 example/
 node_modules/
+.cache
+.gitattributes
+tsconfig.json
+.babelrc
