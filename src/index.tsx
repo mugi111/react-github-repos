@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Octokit } from "@octokit/rest";
 import { ReposName, Description, Language, Star } from "./Components";
 import { ReposProps, Root } from "./Types";
+// import "./Styles/style.scss";
 
 const GithubRepos: React.FC<ReposProps> = (props: ReposProps) => {
-  const [data, setData] = useState({
+  const [data, setData] = useState<Root>({
     reposName: { name: "repos", url: "repos" },
     description: { body: "repos" },
     language: { name: "go" },
@@ -29,12 +30,14 @@ const GithubRepos: React.FC<ReposProps> = (props: ReposProps) => {
             url: result.data.stargazers_url,
           },
         });
+      }).catch(err => {
+        console.error(err);
       })
   }, []);
 
   return (
-    <div>
-      <div>
+    <div className="github-repos-item github-repos-box">
+      <div className="github-repos-content">
         <ReposName
           name={data.reposName!.name}
           url={data.reposName!.url}
