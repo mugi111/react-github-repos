@@ -4,27 +4,32 @@ import { ReposName, Description, Language, Star } from "./Components";
 import { ReposProps, Root } from "./Types";
 
 const GithubRepos: React.FC<ReposProps> = (props: ReposProps) => {
-  const [data, setData] = useState<Root>({});
+  const [data, setData] = useState({
+    reposName: { name: "repos", url: "repos" },
+    description: { body: "repos" },
+    language: { name: "go" },
+    stargazer: {
+      count: 200,
+      url: "repos",
+    },
+  });
 
   useEffect(() => {
-    const fetchData = async () => {
       const octokit = new Octokit();
-      const result = await octokit.repos.get({
+      octokit.repos.get({
         owner: props.owner,
         repo: props.repo,
-      });
-
-      setData({
-        reposName: { name: result.data.name, url: result.data.html_url },
-        description: { body: result.data.description },
-        language: { name: result.data.language },
-        stargazer: {
-          count: result.data.stargazers_count,
-          url: result.data.stargazers_url,
-        },
-      });
-    };
-    fetchData();
+      }).then(result => {
+        setData({
+          reposName: { name: result.data.name, url: result.data.html_url },
+          description: { body: result.data.description },
+          language: { name: result.data.language },
+          stargazer: {
+            count: result.data.stargazers_count,
+            url: result.data.stargazers_url,
+          },
+        });
+      })
   }, []);
 
   return (
