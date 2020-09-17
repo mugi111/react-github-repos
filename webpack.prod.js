@@ -8,10 +8,9 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
 
 module.exports = {
   mode: "production",
-  entry: "./dist/index.js",
+  entry: "./example/src/index.js",
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.(js|jsx)/,
         use: "babel-loader",
         exclude: /node_modules/,
@@ -29,6 +28,7 @@ module.exports = {
   plugins: [htmlWebpackPlugin],
   resolve: {
     extensions: [".js", ".jsx"],
+    modules: [path.resolve(__dirname, 'example/src'), "node_modules"]
   },
   devServer: {
     port: 3001,

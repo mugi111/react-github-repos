@@ -41,4 +41,5 @@ const GithubRepos: React.FC<ReposProps> = (props: ReposProps) => {
     </div>
   );
 };
+
 export default GithubRepos;
