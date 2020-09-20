@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Octokit } from "@octokit/rest";
 import { ReposName, Description, Language, Star } from "./Components";
 import { ReposProps, Root } from "./Types";
+import "./Styles/style.scss";
 
 class GithubRepos extends React.Component<ReposProps, Root> {
   constructor(props: ReposProps) {
@@ -39,8 +40,8 @@ class GithubRepos extends React.Component<ReposProps, Root> {
 
   render() {
     return (
-      <div>
-        <div>
+    <div className="github-repos-item github-repos-box">
+      <div className="github-repos-content">
           <ReposName
             name={this.state.reposName!.name}
             url={this.state.reposName!.url}
