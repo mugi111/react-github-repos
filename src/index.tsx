@@ -3,24 +3,29 @@ import { Octokit } from "@octokit/rest";
 import { ReposName, Description, Language, Star } from "./Components";
 import { ReposProps, Root } from "./Types";
 
-const GithubRepos: React.FC<ReposProps> = (props: ReposProps) => {
-  const [data, setData] = useState({
-    reposName: { name: "repos", url: "repos" },
-    description: { body: "repos" },
-    language: { name: "go" },
-    stargazer: {
-      count: 200,
-      url: "repos",
-    },
-  });
+class GithubRepos extends React.Component<ReposProps, Root> {
+  constructor(props: ReposProps) {
+    super(props);
+    this.state = {
+      reposName: { name: "repos", url: "repos" },
+      description: { body: "repos" },
+      language: { name: "go" },
+      stargazer: {
+        count: 200,
+        url: "repos",
+      },
+    };
+  }
 
-  useEffect(() => {
-      const octokit = new Octokit();
-      octokit.repos.get({
-        owner: props.owner,
-        repo: props.repo,
-      }).then(result => {
-        setData({
+  componentDidMount() {
+    const octokit = new Octokit();
+    octokit.repos
+      .get({
+        owner: this.props.owner,
+        repo: this.props.repo,
+      })
+      .then((result) => {
+        this.setState({
           reposName: { name: result.data.name, url: result.data.html_url },
           description: { body: result.data.description },
           language: { name: result.data.language },
@@ -29,22 +34,27 @@ const GithubRepos: React.FC<ReposProps> = (props: ReposProps) => {
             url: result.data.stargazers_url,
           },
         });
-      })
-  }, []);
+      });
+  }
 
-  return (
-    <div>
+  render() {
+    return (
       <div>
-        <ReposName
-          name={data.reposName!.name}
-          url={data.reposName!.url}
-        ></ReposName>
-        <Description body={data.description!.body}></Description>
-        <Language name={data.language!.name}></Language>
-        <Star count={data.stargazer!.count} url={data.stargazer!.url}></Star>
+        <div>
+          <ReposName
+            name={this.state.reposName!.name}
+            url={this.state.reposName!.url}
+          ></ReposName>
+          <Description body={this.state.description!.body}></Description>
+          <Language name={this.state.language!.name}></Language>
+          <Star
+            count={this.state.stargazer!.count}
+            url={this.state.stargazer!.url}
+          ></Star>
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default GithubRepos;
