@@ -2,7 +2,9 @@ src/
 test/
 example/
 node_modules/
-.cache
-.gitattributes
-tsconfig.json
 .babelrc
+tsconfig.json
+.gitattributes
+.cache/
+yarn-error.log
+package.json
