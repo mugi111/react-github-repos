@@ -47,11 +47,13 @@ class GithubRepos extends React.Component<ReposProps, Root> {
             url={this.state.reposName!.url}
           ></ReposName>
           <Description body={this.state.description!.body}></Description>
-          <Language name={this.state.language!.name}></Language>
-          <Star
-            count={this.state.stargazer!.count}
-            url={this.state.stargazer!.url}
-          ></Star>
+          <p className="github-repos-language-p">
+            <Language name={this.state.language!.name}></Language>
+            <Star
+              count={this.state.stargazer!.count}
+              url={this.state.stargazer!.url}
+            ></Star>
+          </p>
         </div>
       </div>
     );
