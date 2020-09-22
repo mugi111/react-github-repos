@@ -1,6 +1,7 @@
-import React from 'react';
+import React from "react";
 import GithubRepos from "react-github-repos";
-import './App.css';
+import "./App.css";
+import "react-github-repos/dist/index.css";
 
 function App() {
   return (
