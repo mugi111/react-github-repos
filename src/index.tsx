@@ -1,16 +1,16 @@
 import React from "react";
 import { Octokit } from "@octokit/rest";
 import { ReposName, Description, Language, Star } from "./Components";
-import { ReposProps, Root } from "./Types";
+import { ReposProps, RepoProps, Root } from "./Types";
 import "./Styles/index.scss";
 
-class GithubRepos extends React.Component<ReposProps, Root> {
-  constructor(props: ReposProps) {
+export class GithubRepo extends React.Component<RepoProps, Root> {
+  constructor(props: RepoProps) {
     super(props);
     this.state = {
-      reposName: { name: "repos", url: "repos" },
-      description: { body: "repos" },
-      language: { name: "go" },
+      reposName: { name: "reposName", url: "reposUrl" },
+      description: { body: "description" },
+      language: { name: "language" },
       stargazer: {
         count: 200,
         url: "repos",
@@ -60,4 +60,20 @@ class GithubRepos extends React.Component<ReposProps, Root> {
   }
 }
 
-export default GithubRepos;
+export default class GithubRepos extends React.Component<ReposProps> {
+  constructor(props: ReposProps) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <ol className="github-repos-ol">
+        {this.props.repoProps.map((repoProps) => {
+          <li className="github-repos-li">
+            <GithubRepo owner={repoProps.owner} repo={repoProps.repo} />
+          </li>;
+        })}
+      </ol>
+    );
+  }
+}

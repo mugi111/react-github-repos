@@ -3,10 +3,15 @@ import GithubRepos from "react-github-repos";
 import "./App.css";
 import "react-github-repos/dist/index.css";
 
+const props = [
+  { owner: "mugi111", repos: "react-github-repos" },
+  { owner: "mugi111", repos: "tweet-trigger-release" },
+];
+
 function App() {
   return (
     <div className="App">
-      <GithubRepos owner="mugi111" repo="react-github-repos" />
+      <GithubRepos repoProps={props} />
     </div>
   );
 }

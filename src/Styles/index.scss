@@ -20,6 +20,30 @@
   margin-bottom: 0px;
 }
 
+.github-repos-ol {
+  display: flex;
+  list-style: none;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  margin-right: -8px;
+  margin-left: -8px;
+}
+
+.github-repos-li {
+  display: flex;
+  margin-bottom: 16px;
+  align-content: stretch;
+}
+
+ol {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
 p {
   display: block;
   margin-block-start: 1em;

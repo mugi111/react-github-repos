@@ -1,6 +1,10 @@
-export type ReposProps = {
+export type RepoProps = {
   owner: string;
   repo: string;
+};
+
+export type ReposProps = {
+  repoProps: RepoProps[];
 };
 
 export type ReposNameProps = {
