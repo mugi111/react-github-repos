@@ -8746,10 +8746,10 @@ react-error-overlay@^6.0.7:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.7.tgz#1dcfb459ab671d53f660a991513cb2f0a0553108"
   integrity sha512-TAv1KJFh3RhqxNvhzxj6LeT5NWklP6rDr2a0jaTfsZ5wSZWHOGeqQyejUp3xxLfPt2UpyJEcVQB/zyPcmonNFA==
 
-react-github-repos@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/react-github-repos/-/react-github-repos-0.2.2.tgz#b7926530f3882b7097b6331cb1fbdf09609ca1fb"
-  integrity sha512-xDjGZ3XMu7DU8xICeom+gJX1wBp+4xfolKzGVRt/xPorP8oDNoyGz207G4mI83zZKB4Y2Raz8nUu7Uh7Y0+mqg==
+react-github-repos@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/react-github-repos/-/react-github-repos-0.2.3.tgz#db98c988aa24149dd71e43352df74eb01f50bf44"
+  integrity sha512-trrytyfR4WtM8YvO0etx535HShnqt7HjAx9aqni0r6xNuW56wpQcGTd6hljnnC7F8H42gkGSoi+P7bBuSjZW1w==
 
 react-is@^16.12.0, react-is@^16.8.1, react-is@^16.8.4:
   version "16.13.1"
