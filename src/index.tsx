@@ -69,9 +69,11 @@ export default class GithubRepos extends React.Component<ReposProps> {
     return (
       <ol className="github-repos-ol">
         {this.props.repoProps.map((repoProps) => {
-          <li className="github-repos-li">
-            <GithubRepo owner={repoProps.owner} repo={repoProps.repo} />
-          </li>;
+          return (
+            <li className="github-repos-li">
+              <GithubRepo owner={repoProps.owner} repo={repoProps.repo} />
+            </li>
+          )
         })}
       </ol>
     );
