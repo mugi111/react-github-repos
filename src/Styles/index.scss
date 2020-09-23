@@ -6,6 +6,7 @@
   background-color: #ffffff;
   border: 1px solid #e1e4e8;
   border-radius: 6px;
+  width: 100%;
 }
 
 .github-repos-content {
@@ -35,6 +36,13 @@
   align-content: stretch;
   padding-left: 8px;
   padding-right: 8px;
+  width: 50%;
+}
+
+@media (min-width: 768px) {
+  .github-repos-li {
+    width: 100%;
+  }
 }
 
 * {
