@@ -16,7 +16,7 @@ const Language: React.FC<LangProps> = (props: LangProps) => {
   } else {
     return (
       <span className="github-repos-language-span">
-        <span className="github-repos-langage-color" style={{backgroundColor: colorList[props.name.toLowerCase()].color}} />
+        <span className="github-repos-langage-color" style={{backgroundColor: colorList[props.name].color}} />
         <span>{props.name}</span>
       </span> 
     )
