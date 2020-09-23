@@ -4,8 +4,8 @@ import "./App.css";
 import "react-github-repos/dist/index.css";
 
 const props = [
-  { owner: "mugi111", repos: "react-github-repos" },
-  { owner: "mugi111", repos: "tweet-trigger-release" },
+  { owner: "mugi111", repo: "react-github-repos" },
+  { owner: "mugi111", repo: "tweet-trigger-release" },
 ];
 
 function App() {
