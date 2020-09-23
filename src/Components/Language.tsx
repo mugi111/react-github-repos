@@ -1,5 +1,5 @@
 import React from "react";
-import { LangProps, LangObj } from "../Types";
+import { LangProps } from "../Types";
 import "../Styles/Language.scss";
 
 const GetLangColor = (langName: string | undefined) => {
