@@ -37,6 +37,10 @@
   padding-right: 8px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 ol {
   display: block;
   margin-block-start: 1em;
