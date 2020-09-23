@@ -1,14 +1,21 @@
 import React from "react";
-import { LangProps } from "../Types";
+import { LangProps, LangObj } from "../Types";
 import "../Styles/Language.scss";
 
-const colorList = require("../Styles/colors.json");
-
+const GetLangColor = (langName: string | undefined) => {
+  const colorList = require("../Styles/colors.json");
+  if (langName !== undefined) {
+    return colorList[langName].color;
+  } else {
+    return null;
+  }
+}
 
 const Language: React.FC<LangProps> = (props: LangProps) => {
-  if(props.name === undefined) {
+  const langColor = GetLangColor(props.name);
+  if(langColor === null) {
     return (
-      <span className="github-repos-language-span" style={{display: "none"}}>
+      <span className="github-repos-language-span" style={{display: "none !important"}}>
         <span className="github-repos-langage-color" />
         <span>{props.name}</span>
       </span>
@@ -16,7 +23,7 @@ const Language: React.FC<LangProps> = (props: LangProps) => {
   } else {
     return (
       <span className="github-repos-language-span">
-        <span className="github-repos-langage-color" style={{backgroundColor: colorList[props.name].color}} />
+        <span className="github-repos-langage-color" style={{backgroundColor: langColor}} />
         <span>{props.name}</span>
       </span> 
     )
