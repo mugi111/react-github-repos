@@ -10,7 +10,7 @@ export class GithubRepo extends React.Component<RepoProps, Root> {
     this.state = {
       reposName: { name: "reposName", url: "reposUrl" },
       description: { body: "description" },
-      language: { name: "language" },
+      language: { name: "C" },
       stargazer: {
         count: 200,
         url: "repos",

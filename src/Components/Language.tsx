@@ -4,7 +4,7 @@ import "../Styles/Language.scss";
 
 const GetLangColor = (langName: string | undefined) => {
   const colorList = require("../Styles/colors.json");
-  if (langName !== undefined) {
+  if (langName !== undefined && langName) {
     return colorList[langName].color;
   } else {
     return null;
@@ -13,7 +13,7 @@ const GetLangColor = (langName: string | undefined) => {
 
 const Language: React.FC<LangProps> = (props: LangProps) => {
   const langColor = GetLangColor(props.name);
-  if(langColor === null) {
+  if(!langColor) {
     return (
       <span className="github-repos-language-span" style={{display: "none !important"}}>
         <span className="github-repos-langage-color" />
