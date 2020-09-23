@@ -10,7 +10,7 @@ const props = [
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <GithubRepos repoProps={props} />
     </div>
   );
