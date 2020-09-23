@@ -20,6 +20,17 @@ export type LangProps = {
   name?: string;
 };
 
+export type LangObj = {
+  langData: LangData;
+  [key: string]: LangData;
+}
+
+export type LangData = {
+  color: string;
+  url: string;
+  [key: string]: string;
+}
+
 export type StarProps = {
   count?: number;
   url?: string;
