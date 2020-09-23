@@ -39,7 +39,7 @@
   width: 50%;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .github-repos-li {
     width: 100%;
   }
