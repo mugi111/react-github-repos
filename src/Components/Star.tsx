@@ -21,7 +21,7 @@ const Star: React.FC<StarProps> = (props: StarProps) => {
       </a>
     );
   } else {
-    return <span></span>;
+    return <></>;
   }
 };
 
