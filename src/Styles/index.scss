@@ -3,6 +3,7 @@
 }
 
 .github-repos-box {
+  display: flex;
   background-color: #ffffff;
   border: 1px solid #e1e4e8;
   border-radius: 6px;
@@ -56,6 +57,7 @@ ol {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   padding-inline-start: 40px;
+  padding-inline-end: 40px;
 }
 
 p {

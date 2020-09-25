@@ -9,26 +9,23 @@ const GetLangColor = (langName: string | undefined) => {
   } else {
     return null;
   }
-}
+};
 
 const Language: React.FC<LangProps> = (props: LangProps) => {
   const langColor = GetLangColor(props.name);
-  if(!langColor) {
-    return (
-      <span className="github-repos-language-span" style={{display: "none !important"}}>
-        <span className="github-repos-langage-color" />
-        <span>{props.name}</span>
-      </span>
-    );
+  if (!langColor) {
+    return <></>;
   } else {
     return (
       <span className="github-repos-language-span">
-        <span className="github-repos-langage-color" style={{backgroundColor: langColor}} />
+        <span
+          className="github-repos-langage-color"
+          style={{ backgroundColor: langColor }}
+        />
         <span>{props.name}</span>
-      </span> 
-    )
+      </span>
+    );
   }
-
 };
 
 export default Language;
