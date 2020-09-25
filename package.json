@@ -6,6 +6,7 @@
   "repository": "https://github.com/mugi111/react-github-repos.git",
   "author": "mugi111",
   "license": "MIT",
+  "keywords": ["github", "react"],
   "devDependencies": {
     "@babel/cli": "^7.11.6",
     "@babel/core": "^7.11.6",
