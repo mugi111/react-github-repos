@@ -6,6 +6,7 @@ const Star: React.FC<StarProps> = (props: StarProps) => {
     return (
       <a href={props.url} className="github-repos-star-a">
         <svg
+          className="github-repos-star-icon"
           xmlns="http://www.w3.org/2000/svg"
           x="0"
           y="0"
