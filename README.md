@@ -2,6 +2,15 @@
 ## About
 React Component that imitates pinned on github
 
+## Install
+```
+yarn add react-github-repos
+```
+
+```
+npm i react-github-repos
+```
+
 ## Usage
 
 ```
