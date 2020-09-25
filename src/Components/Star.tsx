@@ -1,5 +1,6 @@
 import * as React from "react";
 import { StarProps } from "../Types";
+import "../Styles/Star.scss";
 
 const Star: React.FC<StarProps> = (props: StarProps) => {
   if (props.count != 0) {
