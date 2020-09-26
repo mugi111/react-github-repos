@@ -39,6 +39,8 @@
 
 .content-page {
   padding: 20px;
+  padding-bottom: 50px;
+  position: relative;
 }
 
 .code-bg {
@@ -51,6 +53,7 @@
 }
 
 .footer {
+  height: 50px;
   width: calc(100vw - 40px);
   position: absolute;
   text-align: center;
