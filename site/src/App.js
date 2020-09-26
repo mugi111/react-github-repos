@@ -52,8 +52,10 @@ export default App;`}
       </div>
       <div className="content example">
         <h2>Example</h2>
-        <div>
-          <GithubRepos repoProps={props} />
+        <div className="example-box">
+          <div>
+            <GithubRepos repoProps={props} />
+          </div>
         </div>
       </div>
       <footer className="footer">© 2020 mugi111</footer>
