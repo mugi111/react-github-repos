@@ -36,3 +36,36 @@
     transform: rotate(360deg);
   }
 }
+
+.content-page {
+  padding: 20px;
+  padding-bottom: 50px;
+  position: relative;
+}
+
+.attension {
+  color: red;
+}
+
+.code-bg {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: #ebebeb;
+}
+
+.example-box {
+  border: #dcdcdd solid 3px;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.footer {
+  height: 30px;
+  width: calc(100vw - 40px);
+  position: absolute;
+  text-align: center;
+  bottom: 0px;
+}
