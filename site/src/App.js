@@ -18,8 +18,22 @@ function App() {
       <div className="content about">
         <h2>About</h2>
         <span>Githubのpinned欄みたいにリポジトリを表示するコンポーネント</span>
+        <br />
+        <br />
+        <span className="attension">
+          GithubのAPIの仕様上、同一IPから60回/1時間
+          以上叩かれると情報が取得できなくなります。
+        </span>
       </div>
-      <div className="content about">
+      <div className="content link">
+        <h3>Link</h3>
+        <a href="https://github.com/mugi111/react-github-reposnpm">Github</a>
+        <br />
+        <a href="https://www.npmjs.com/package/react-github-repos">
+          NPM package
+        </a>
+      </div>
+      <div className="content usage">
         <h2>Usage</h2>
         <h3>Install</h3>
         <code className="code-bg">yarn add react-github-repos</code>

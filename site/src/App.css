@@ -43,6 +43,10 @@
   position: relative;
 }
 
+.attension {
+  color: red;
+}
+
 .code-bg {
   display: block;
   width: 100%;
