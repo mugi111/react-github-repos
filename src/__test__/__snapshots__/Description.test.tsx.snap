@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Description 1`] = `
+<p
+  className="github-repos-desc"
+>
+  test description
+</p>
+`;
